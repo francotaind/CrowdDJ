@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-3nqeblzfe$q7t*!j#cp$&o(waz52vk@5s2l8d7u+_uyc)(ysxu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
+SPOTIFY_CLIENT_ID = '8d46418d48984b189530758f4dd5a18c'
+SPOTIFY_CLIENT_SECRET = '82548190f0204ef3b0e721d28aae0c19'
+SPOTIFY_REDIRECT_URI = 'http://127.0.0.1:8000/spotify/callback/'
 
 # Application definition
 
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'crowd_dj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +72,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'crowd_dj.wsgi.application'
+
+#login
+
+LOGIN_URL = '/login/'
 
 
 # Database
