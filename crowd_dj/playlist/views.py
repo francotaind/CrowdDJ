@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'index.html')
+
+def party_room(request):
+    return render(request, 'party_room.html')

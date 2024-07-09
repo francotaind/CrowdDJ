@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collaborative Party Playlist</title>
+    <title>CrowdDJ - Collaborative Party Playlist</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .music-note {
+            font-size: 2em;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Collaborative Party Playlist!</h1>
-    <!-- Add more content here as you develop the app -->
+    <div class="container">
+        <h1>Welcome to CrowdDJ <span class="music-note">🎵</span></h1>
+        <p>Create, collaborate, and groove to the ultimate party playlist!</p>
+        <a href="{% url 'party_room' %}" class="cta-button">Start the Party</a>
+    </div>
 </body>
 </html>
