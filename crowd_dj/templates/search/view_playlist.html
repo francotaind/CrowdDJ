@@ -1,0 +1,14 @@
+{% extends 'search/base.html' %}
+
+{% block content %}
+    <h2>My Playlist</h2>
+    <p>Number of songs: {{ songs|length }}</p>
+    <ul>
+    {% for song in songs %}
+        <li>{{ song.name }} - {{ song.artist }} (ID: {{ song.id }})</li>
+    {% empty %}
+        <li>No songs in the playlist yet.</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'search_song' %}">Add More Songs</a>
+{% endblock %}

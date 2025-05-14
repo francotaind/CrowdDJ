@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','192.168.100.107']
 
 SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
 SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
@@ -37,6 +37,7 @@ SPOTIFY_REDIRECT_URI = os.getenv('SPOTIFY_REDIRECT_URI')
 # Application definition
 
 INSTALLED_APPS = [
+    'search',
     'playlist',
     'django.contrib.admin',
     'django.contrib.auth',

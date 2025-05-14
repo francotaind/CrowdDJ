@@ -1,0 +1,11 @@
+{% extends 'search/base.html' %}
+
+{% block content %}
+    <h2>Search Results</h2>
+    <form method="post" action="{% url 'add_to_playlist' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add to Playlist</button>
+    </form>
+    <a href="{% url 'search_song' %}">New Search</a>
+{% endblock %}

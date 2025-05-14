@@ -1,0 +1,11 @@
+{% extends 'search/base.html' %}
+
+{% block content %}
+    <h2>Search for a Song</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <a href="{% url 'view_playlist' %}">View Playlist</a>
+{% endblock %}
